@@ -1,0 +1,91 @@
+<h1>JavaScript HTML DOM Animation</h1>
+
+<h2>My First JS Animation</h2>
+
+<h3>Create an Animation Container</h3>
+
+<h3>Style the Elements</h3>
+<p>The <b>container</b> element should be created with style = "position: relative".</p> 
+<p>The <b>animation</b> element should be created with style = "position: absolute".</p>
+
+<h3>Animation Code</h3>
+<ul>
+	<li>JavaScript animations are done by programming gradual changes in an element's style.</li>
+	<li>The changes are called by a timer. When the timer interval is small, the animation looks continuous.</li>
+</ul>
+
+The basic code is:
+<pre>
+var id = setInterval(frame, 5);
+
+function frame() {
+    if (/* test for finished */) {
+        clearInterval(id);
+    } else {
+        /* code to change the element style */  
+    }
+}
+</pre>
+
+<h3>Create the Animation Using JavaScript</h3>
+<pre>
+function myMove() {
+    var elem = document.getElementById("animate"); 
+    var pos = 0;
+    var id = setInterval(frame, 5);
+    function frame() {
+        if (pos == 350) {
+            clearInterval(id);
+        } else {
+            pos++; 
+            elem.style.top = pos + 'px'; 
+            elem.style.left = pos + 'px'; 
+        }
+    }
+}	
+</pre>
+
+<style>
+	#container {
+		width: 400px;
+		height: 400px;
+		position: relative;
+		background: yellow;
+		margin: 10px 0 0 40px;
+	}
+	#animate {
+		width: 50px;
+		height: 50px;
+		position: absolute;
+		background: red;
+	}
+</style>
+
+<p>
+	<button onclick="myMove()">Click Me</button>
+</p>
+<div id="container">
+	<div id="animate">
+	</div>
+</div>
+
+<br><br>	
+
+<script>
+	// membuat function beri nama myMove
+	function myMove() {
+    var elem = document.getElementById("animate"); // mengambil element div id animate 
+    var pos = 0;                                   // mendeklarasikan posisi animate 0px
+    var id = setInterval(frame, 50);  // deklarasikan variable id = setInterval(frame, 5) pada function frame
+
+    function frame() {
+        if (pos == 350) {
+            clearInterval(id); // menstop movement/change
+        } else {               // menambah movement/change by 1
+            pos++; 
+            elem.style.top = pos + 'px'; 
+            elem.style.left = pos + 'px'; 
+        }
+    }
+}
+</script>

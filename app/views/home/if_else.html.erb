@@ -1,0 +1,49 @@
+<h1>If Else Statement</h1>
+
+<pre>
+var angka1 = 22;
+var angka2 = 10;
+
+if(angka1 <= angka2) {
+	document.write("I need you so");
+} 
+else if (angka1 == angka2) {
+		document.write("I miss you a lot..!")
+} else {
+	document.write("I hate you ever need you")
+};	
+</pre>
+
+<script>
+	var angka1 = 22;
+	var angka2 = 22;
+
+	if(angka1 < angka2) {
+		document.write("I need you so");
+		document.write("<br>");
+	} 
+	else if (angka1 == angka2) {
+		document.write("I miss you a lot..!");
+		document.write("<br>");
+	} else {
+		document.write("I hate you ever need you");
+		document.write("<br>");
+	};
+
+	// contoh lain
+	document.write("Contoh Lain <br>")
+
+	function checkPassword(password) {
+		var passwordDatabase = "dyo123"
+		if (password == passwordDatabase) {
+			document.write("Anda berhasil login");
+		}
+		else {
+			document.write("Login anda gagal")
+		} 
+	};
+	var inputPassword = "dyo123"
+	checkPassword(inputPassword);
+
+</script>
+
